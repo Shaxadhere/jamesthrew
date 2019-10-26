@@ -1,6 +1,7 @@
 <?php
 
-$AppName = "Aroma";
+//App Info//
+$AppName = "JamesThrew";
 $PageName = "";
 
 //Including Fuctions//

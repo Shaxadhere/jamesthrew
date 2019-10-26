@@ -13,7 +13,6 @@
 include('../Models/config.php');
 include('../Functions/main.php');
 
-//
 $id = $_GET["id"];
 $query = getInfo("tbl_user", "PK_ID", $id,$connect);
 $row = mysqli_fetch_array($query);
