@@ -1,6 +1,6 @@
 <?php
 
 //Adding Configuration//
-include('../AppData/WebConfig.php');
+include('../appdata/WebConfig.php');
 
 ?>
