@@ -2,13 +2,13 @@
 //Defining Page Name//
 $PageName = "Home";
 
-include('header.php');
+include('shared/header.php');
 
 
 echo "hello im home";
 
 
-include('footer.php');
+include('shared/footer.php');
 
 ?>
 
