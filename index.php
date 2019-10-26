@@ -5,7 +5,7 @@ $PageName = "Home";
 include('shared/header.php');
 
 
-echo "hello im home";
+echo "<br>hello im home<br>";
 
 
 include('shared/footer.php');
