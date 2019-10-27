@@ -1,4 +1,6 @@
 <?php
+
+include('../appdata/WebConfig.php');
 include('../shared/adminheader.php');
 
 

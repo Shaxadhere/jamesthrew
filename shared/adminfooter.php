@@ -1,6 +1,6 @@
 	<!-- partial:partials/_footer.html -->
     <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
-				<p class="text-muted text-center text-md-left">Copyright © 2019 <a href="/">JamesThrew.com</a>. All rights reserved</p>
+				<p class="text-muted text-center text-md-left">Copyright © <?php echo date("Y") ?> <a href="/jamesthrew">JamesThrew.com</a>. All rights reserved</p>
 			</footer>
 			<!-- partial -->
 		
@@ -28,5 +28,4 @@
 	<!-- end custom js for this page -->
 </body>
 
-<!-- Mirrored from www.nobleui.com/html/template/demo_2/dashboard-one.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Oct 2019 14:10:49 GMT -->
 </html>    

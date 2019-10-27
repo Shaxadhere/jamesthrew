@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from www.nobleui.com/html/template/demo_2/dashboard-one.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Oct 2019 14:10:15 GMT -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,52 +40,58 @@
         <ul class="nav">
           <li class="nav-item nav-category">Main</li>
           <li class="nav-item">
-            <a href="dashboard-one.html" class="nav-link">
+            <a href="/jamesthrew/admin" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Home</span>
             </a>
           </li>
-          <li class="nav-item nav-category">New Ideas</li>
+          <li class="nav-item nav-category">Recipies</li>
           <li class="nav-item">
-			<a href="pages/apps/chat.html" class="nav-link">
+			<a href="/jamesthrew/admin/recipies" class="nav-link">
 			<i class="link-icon" data-feather="slack"></i>
               <span class="link-title">Recipies</span>
             </a>
 		  </li>
 		  <li class="nav-item">
-            <a href="/admin/tips" class="nav-link">
+            <a href="/jamesthrew/admin/tips" class="nav-link">
 			<i class="link-icon" data-feather="list"></i>
               <span class="link-title">Tips</span>
             </a>
 		  </li>
           </li>
-          <li class="nav-item nav-category">Announcements</li>
+          <li class="nav-item nav-category">Competetions</li>
           <li class="nav-item">
-            <a href="contest/" class="nav-link">
-			
-              <span class="link-title">Contest</span>
+            <a href="/jamesthrew/admin/contest" class="nav-link">
+			<i class="link-icon" data-feather="target"></i>
+              <span class="link-title">Contests</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/apps/chat.html" class="nav-link">
+            <a href="/jamesthrew/admin/announcements" class="nav-link">
 			<i class="link-icon" data-feather="zap"></i>
               <span class="link-title">Announcements</span>
 			</a>
 		  </li>
 
-          <li class="nav-item nav-category">Details</li>
+          <li class="nav-item nav-category">Others</li>
           <li class="nav-item">
-            <a href="pages/apps/chat.html" class="nav-link">
-              
-              <span class="link-title">Feedback</span>
+            <a href="/jamesthrew/admin/feedbacks" class="nav-link">
+              <i class="link-icon" data-feather="edit-3"></i>
+              <span class="link-title">Feedbacks</span>
             </a>
           </li>          
           <li class="nav-item">
-            <a href="pages/apps/chat.html" class="nav-link">
-              
-              <span class="link-title">Faq's</span>
+            <a href="/jamesthrew/admin/faqs" class="nav-link">
+              <i class="link-icon" data-feather="info"></i>
+              <span class="link-title">FAQs</span>
             </a>
-          </li>          
+		  </li> 
+		  <li class="nav-item">
+            <a href="/jamesthrew/admin/userprofile" class="nav-link">
+              <i class="link-icon" data-feather="user"></i>
+              <span class="link-title">User Profile</span>
+            </a>
+          </li>             
         </ul>
       </div>
     </nav>
@@ -113,7 +118,7 @@
 										<img src="../assets/dashboard/assets/images/faces/face1.jpg" alt="">
 									</div>
 									<div class="info text-center">
-										<p class="name font-weight-bold mb-0">Amiah Burton</p>
+										<p class="name font-weight-bold mb-0">Shehzad Ahmed</p>
 										<p class="email text-muted mb-3">amiahburton@gmail.com</p>
 									</div>
 								</div>
