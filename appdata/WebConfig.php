@@ -1,11 +1,14 @@
 <?php
 
+//Defining Application Root//
+$root = $_SERVER['DOCUMENT_ROOT'];
+
 //App Info//
 $AppName = "JamesThrew";
 $PageName = "";
 
 //Including Fuctions//
-include('../functions/main.php');
+include($root.'/jamesthrew/functions/main.php');
 
 //Connection
 define("server_name", "localhost");

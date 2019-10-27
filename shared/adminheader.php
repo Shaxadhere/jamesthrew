@@ -7,24 +7,24 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
 	<!-- core:css -->
-	<link rel="stylesheet" href="../assets/dashboard/assets/vendors/core/core.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/core/core.css">
 	<!-- endinject -->
   <!-- plugin css for this page -->
-	<link rel="stylesheet" href="../assets/dashboard/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="../assets/dashboard/assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/fonts/feather-font/css/iconfont.css">
 	<!-- endinject -->
   <!-- Layout styles -->  
-	<link rel="stylesheet" href="../assets/dashboard/assets/css/demo_2/style.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/css/demo_2/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="../assets/dashboard/assets/images/favicon.png" />
+  	<link rel="apple-touch-icon" sizes="180x180" href="/jamesthrew/assets/dashboard/assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/jamesthrew/assets/dashboard/assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/jamesthrew/assets/dashboard/assets/favicon//favicon-16x16.png">
 
 </head>
 <body>
 	<div class="main-wrapper">
-
-		<!-- partial:partials/_sidebar.html -->
 		<nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
@@ -76,7 +76,7 @@
           <li class="nav-item nav-category">Others</li>
           <li class="nav-item">
             <a href="/jamesthrew/admin/feedbacks" class="nav-link">
-              <i class="link-icon" data-feather="edit-3"></i>
+			<i class="link-icon" data-feather="edit-3"></i>
               <span class="link-title">Feedbacks</span>
             </a>
           </li>          
@@ -110,12 +110,12 @@
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown nav-profile">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src="../assets/dashboard/assets/images/faces/face1.jpg" alt="profile">
+								<img src="/jamesthrew/assets/dashboard/assets/images/faces/face1.jpg" alt="profile">
 							</a>
 							<div class="dropdown-menu" aria-labelledby="profileDropdown">
 								<div class="dropdown-header d-flex flex-column align-items-center">
 									<div class="figure mb-3">
-										<img src="../assets/dashboard/assets/images/faces/face1.jpg" alt="">
+										<img src="/jamesthrew/assets/dashboard/assets/images/faces/face1.jpg" alt="">
 									</div>
 									<div class="info text-center">
 										<p class="name font-weight-bold mb-0">Shehzad Ahmed</p>
@@ -155,3 +155,4 @@
 					</ul>
 				</div>
 			</nav>
+			<div class="page-content">
