@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+	<title>Jamesthrew.com</title>
 	<!-- core:css -->
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/core/core.css">
 	<!-- endinject -->
@@ -61,7 +61,7 @@
           </li>
           <li class="nav-item nav-category">Competetions</li>
           <li class="nav-item">
-            <a href="/jamesthrew/admin/contest" class="nav-link">
+            <a href="/jamesthrew/admin/contests" class="nav-link">
 			<i class="link-icon" data-feather="target"></i>
               <span class="link-title">Contests</span>
             </a>

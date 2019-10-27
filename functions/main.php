@@ -1,11 +1,21 @@
 <?php
 
-//Calling Header//
-function getHeader(string $link){
-    include($link);
+
+//Adding Header With Dynamic Title//
+function getHeader(string $pageName, string $headerPath)
+{
+    ob_start(); 
+    include($headerPath);
+    //include("header.php");
+    $buffer=ob_get_contents();
+    ob_end_clean();
+    $title = $pageName;
+    $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . ' - JamesThrew$3', $buffer);
+
+    echo $buffer;
 }
 
-//Calling Header//
+//Calling Footer//
 function getFooter(string $link){
     include($link);
 }
