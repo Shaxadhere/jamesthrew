@@ -1,6 +1,5 @@
 <?php
 
-
 //Adding Header With Dynamic Title//
 function getHeader(string $pageName, string $headerPath)
 {
