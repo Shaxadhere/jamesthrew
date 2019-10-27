@@ -29,7 +29,7 @@
 		<nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-          Noble<span>UI</span>
+          James<span>Threw</span>
         </a>
         <div class="sidebar-toggler not-active">
           <span></span>
@@ -48,51 +48,28 @@
           </li>
           <li class="nav-item nav-category">New Ideas</li>
           <li class="nav-item">
-            <a href="pages/apps/chat.html" class="nav-link">
-             
+			<a href="pages/apps/chat.html" class="nav-link">
+			<i class="link-icon" data-feather="slack"></i>
               <span class="link-title">Recipies</span>
             </a>
 		  </li>
 		  <li class="nav-item">
-            <a href="pages/apps/chat.html" class="nav-link">
-              
+            <a href="/admin/tips" class="nav-link">
+			<i class="link-icon" data-feather="list"></i>
               <span class="link-title">Tips</span>
             </a>
 		  </li>
-		  	
-		  
-         <!-- <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail link-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span class="link-title">Recipies</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down link-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </a>
-            <div class="collapse" id="emails">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="pages/email/inbox.html" class="nav-link">Recipies</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link">Tips</a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link">Compose</a>
-                </li>
-              </ul>
-            </div>
-          </li>-->
-          
           </li>
           <li class="nav-item nav-category">Announcements</li>
           <li class="nav-item">
-            <a href="pages/apps/chat.html" class="nav-link">
-             
+            <a href="contest/" class="nav-link">
+			
               <span class="link-title">Contest</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="pages/apps/chat.html" class="nav-link">
-              
+			<i class="link-icon" data-feather="zap"></i>
               <span class="link-title">Announcements</span>
 			</a>
 		  </li>
