@@ -1,4 +1,5 @@
 <?php
+require('auth.php');
 include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 $pageName = "Dashboard";
 getHeader($pageName, $root."/shared/adminheader.php")
