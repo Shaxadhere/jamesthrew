@@ -78,6 +78,7 @@ create table tbl_Contest
 PK_ID int PRIMARY key AUTO_INCREMENT,
 ContestName varchar(50) not null,
 ContestDescription varchar(1000) not null,
+SubmissionDate date,
 Active bit not null,
 Deleted bit not null
 );
