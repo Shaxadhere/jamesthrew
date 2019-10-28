@@ -68,12 +68,26 @@ if(isset($_POST['Create'])){
 		showAlert("Something went wrong");
 	}
 }
-
+if(isset($_POST['Save'])){
+	$$ContestName = $_POST['ContestName'];
+	$ContestDescription = $_POST['ContestDescription'];
+	$SubmissionDate = $_POST['SubmissionDate'];
+}
 ?>
 
 </div>
 <script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
 <script>
+	$(document).ready(function(){
+		var trigger = $('#mon tr td a'),
+			container = $('#contentt');
+		trigger.on('click', function(){
+			var $this = $(this)
+			target = $this.data('target');
+			container.load(target);
+			return false;
+		})
+	})
 	$(document).ready(function(){
 		var trigger = $('#det'),
 			container = $('#contentt');
