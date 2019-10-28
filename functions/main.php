@@ -25,6 +25,12 @@ function redirectWindow(string $url)
     echo "<script>window.location.href='$url';</script>";
 }
 
+//Showing Alert//
+function showAlert(string $msg)
+{
+    echo "<script>alert('$msg');</script>";
+}
+
 //Insert Data//
 function insertData(string $table,array $fields,array $values,$conn){
     //Managing Fields//

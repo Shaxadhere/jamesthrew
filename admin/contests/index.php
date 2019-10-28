@@ -60,7 +60,13 @@ if(isset($_POST['Create'])){
 	$ContestName = $_POST['ContestName'];
 	$ContestDescription = $_POST['ContestDescription'];
 	$SubmissionDate = $_POST['SubmissionDate'];
-    $create->AddNew($ContestName, $ContestDescription, $SubmissionDate);
+	$res = $create->AddNew($ContestName, $ContestDescription, $SubmissionDate);
+	if($res){
+		redirectWindow('index');
+	}
+	else{
+		showAlert("Something went wrong");
+	}
 }
 
 ?>
@@ -68,16 +74,6 @@ if(isset($_POST['Create'])){
 </div>
 <script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
 <script>
-	$(document).ready(function(){
-		var trigger = $('#mon tr td a'),
-			container = $('#contentt');
-		trigger.on('click', function(){
-			var $this = $(this)
-			target = $this.data('target');
-			container.load(target);
-			return false;
-		})
-	})
 	$(document).ready(function(){
 		var trigger = $('#det'),
 			container = $('#contentt');
