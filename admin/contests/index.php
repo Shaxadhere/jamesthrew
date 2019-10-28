@@ -2,7 +2,9 @@
 include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include($root.'/admin/contests/model.php');
 $pageName = "Contests";
-getHeader($pageName, $root."/shared/adminheader.php")
+getHeader($pageName, $root."/shared/adminheader.php");
+$listing =new contestModel();
+$list = $listing->fetch();
 ?>
 
 <nav class="page-breadcrumb">
@@ -30,13 +32,21 @@ getHeader($pageName, $root."/shared/adminheader.php")
                         <th></th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td><a href="#" id="det" class="btn btn-primary" data-target="create">View Details</a></td>
-                      </tr>
+                    <tbody id="mon">
+					<?php
+					while($arr = mysqli_fetch_array($list))
+					{
+						echo "
+						<tr>
+                        	<td>$arr[ContestName]</td>
+                        	<td>$arr[ContestDescription]</td>
+                        	<td>$arr[SubmissionDate]</td>
+                        	<td><a href='#' id='det' class='btn btn-primary' data-target='create?$arr[PK_ID]'>View Details</a></td>
+                      	</tr>
+						";
+					}
+					?>
+                      
                     </tbody>
                   </table>
                 </div>
@@ -45,9 +55,12 @@ getHeader($pageName, $root."/shared/adminheader.php")
 	</div>
 </div>
 <?php
-
+$create = new contestModel();
 if(isset($_POST['Create'])){
-    AddNew();
+	$ContestName = $_POST['ContestName'];
+	$ContestDescription = $_POST['ContestDescription'];
+	$SubmissionDate = $_POST['SubmissionDate'];
+    $create->AddNew($ContestName, $ContestDescription, $SubmissionDate);
 }
 
 ?>
@@ -55,6 +68,16 @@ if(isset($_POST['Create'])){
 </div>
 <script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
 <script>
+	$(document).ready(function(){
+		var trigger = $('#mon tr td a'),
+			container = $('#contentt');
+		trigger.on('click', function(){
+			var $this = $(this)
+			target = $this.data('target');
+			container.load(target);
+			return false;
+		})
+	})
 	$(document).ready(function(){
 		var trigger = $('#det'),
 			container = $('#contentt');
