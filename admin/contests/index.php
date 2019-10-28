@@ -41,7 +41,7 @@ $list = $listing->fetch();
                         	<td>$arr[ContestName]</td>
                         	<td>$arr[ContestDescription]</td>
                         	<td>$arr[SubmissionDate]</td>
-                        	<td><a href='#' id='det' class='btn btn-primary' data-target='create?$arr[PK_ID]'>View Details</a></td>
+                        	<td><a href='#' id='det' class='btn btn-primary' data-href='$arr[PK_ID]' data-target='create?$arr[PK_ID]'>View Details</a></td>
                       	</tr>
 						";
 					}
@@ -82,12 +82,15 @@ if(isset($_POST['Save'])){
 		var trigger = $('#mon tr td a'),
 			container = $('#contentt');
 		trigger.on('click', function(){
+    		var PK_ID = trigger.attr('data-href');
+			//document.getElementById('#editID').attr('value');
 			var $this = $(this)
 			target = $this.data('target');
 			container.load(target);
 			return false;
 		})
 	})
+	
 	$(document).ready(function(){
 		var trigger = $('#det'),
 			container = $('#contentt');

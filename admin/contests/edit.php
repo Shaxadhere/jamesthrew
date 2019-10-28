@@ -8,6 +8,7 @@ $pageName = "Contests";
             <div class="card-body">
                 <h6 class="card-title">Edit Contest</h6>
 				<form class="forms-sample" action="" method="post">
+                    <input type="hidden" name="PK_ID" value="">
                     <div class="form-group">
                         <label class="col-form-label">Contest Name<span style="color:red">*</span></label>
                         <input class="form-control" value="<?php echo "$ContestName" ?>" maxlength="50" name="ContestName" id="defaultconfig" type="text" placeholder="Enter Contest Name..">
