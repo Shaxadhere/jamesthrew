@@ -1,7 +1,15 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 class contestModel{
-    function create(string $ContestName, string $ContestDescription, $SubmissionDate, $connection){
+    function fetch($connection){
+        try{
+            $table = "tbl_Contest";
+            return fetchData($table, $connection);
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
+    function AddNew(string $ContestName, string $ContestDescription, $SubmissionDate, $connection){
         try{
             $table = "tbl_Contest";
             $fields = array("ContestName", "ContestDescription", "SubmissionDate", "Active", "Deleted");
@@ -14,4 +22,5 @@ class contestModel{
         }
     }
 }
+
 ?>

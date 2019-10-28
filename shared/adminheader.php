@@ -8,16 +8,20 @@
 	<title>Jamesthrew.com</title>
 	<!-- core:css -->
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/core/core.css">
-	<!-- endinject -->
-  <!-- plugin css for this page -->
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
-	<!-- end plugin css for this page -->
-	<!-- inject:css -->
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/fonts/feather-font/css/iconfont.css">
-	<!-- endinject -->
-  <!-- Layout styles -->  
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/css/demo_2/style.css">
-  <!-- End layout styles -->
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/sweetalert2/sweetalert2.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/prismjs/themes/prism.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/select2/select2.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/jquery-tags-input/jquery.tagsinput.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/dropzone/dropzone.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/dropify/dist/dropify.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css">
   	<link rel="apple-touch-icon" sizes="180x180" href="/jamesthrew/assets/dashboard/assets/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/jamesthrew/assets/dashboard/assets/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/jamesthrew/assets/dashboard/assets/favicon//favicon-16x16.png">
