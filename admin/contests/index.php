@@ -90,7 +90,20 @@ if(isset($_POST['Save'])){
 			return false;
 		})
 	})
-	
+
+	$(document).ready(function(){
+		var trigger = $('#mon tr td a'),
+			container = $('#contentt');
+		trigger.on('click', function(){
+    		var PK_ID = trigger.attr('data-href');
+			//document.getElementById('#editID').attr('value');
+			var $this = $(this)
+			target = $this.data('target');
+			container.load(target);
+			return false;
+		})
+	})
+
 	$(document).ready(function(){
 		var trigger = $('#det'),
 			container = $('#contentt');
