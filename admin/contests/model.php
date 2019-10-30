@@ -48,6 +48,16 @@ class contestModel{
             return false;
         }
     }
+    function deleteInfo($id){
+        try{
+            $table = "tbl_Contest";
+            deleteData($table, "PK_ID", $id, $this->connect());
+            return true;
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
 }
 
 ?>
