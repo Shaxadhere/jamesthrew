@@ -9,7 +9,7 @@ $list = $listing->fetch();
 
 <nav class="page-breadcrumb">
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="/jamesthrew/admin/">Dashboard</a></li>
 		<li class="breadcrumb-item active" aria-current="page"><?php echo $pageName ?></li>
 	</ol>
 </nav>

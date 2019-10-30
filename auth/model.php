@@ -1,12 +1,19 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
-
 class authModel{
-    function login(string $email, string $password, $connect)
+    function connect(){
+        define("server_name", "localhost");
+        define("user","root");
+        define("pass","123");
+        define("database","db_jamesthrew");
+        $connection = mysqli_connect(server_name, user, pass, database) or die("failed to connect to database");
+        return ($connection);
+    }
+    function login(string $email, string $password)
     {
         $query = "select * from tbl_User where Email = $email and Password = $password";
-        return mysqli_fetch_array(mysqli_query($connect, $query));
+        $res = mysqli_query($this->connect(), $query);
+        return $res;
     }
 }
 
