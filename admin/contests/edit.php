@@ -51,7 +51,7 @@ if(isset($_POST['Save'])){
     $ConName = $_POST['ContestName'];
     $ConDescription = $_POST['ContestDescription'];
     $ConSubmissionDate = $_POST['SubmissionDate'];
-    mysqli_query($conne, 'INSERT INTO `tbl_contest`(`PK_ID`, `ContestName`, `ContestDescription`, `SubmissionDate`, `Active`, `Deleted`) VALUES ($ConName, $ConDescription, $ConSubmissionDate, 1, 0)');
+    editData("tbl_Contest", array($ConName, $ConDescription, $ConSubmissionDate, 1, 0), "PK_ID", $ID, $conne);
     redirectWindow('index');
 }
 getFooter($root.'/shared/adminfooter.php');
