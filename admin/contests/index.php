@@ -18,7 +18,7 @@ $list = $listing->fetch();
 	<div class="col-md-12 grid-margin stretch-card">
     	<div class="card">
         	<div class="card-body">
-			<a href="#" id="det" class="btn btn-primary" data-target="create">Add New</a>
+			<a href="create" id="det" class="btn btn-primary">Add New</a>
 			<br>
 			<br>
             	<h6 class="card-title">All Contests</h6>
@@ -55,19 +55,6 @@ $list = $listing->fetch();
 	</div>
 </div>
 <?php
-$create = new contestModel();
-if(isset($_POST['Create'])){
-	$ContestName = $_POST['ContestName'];
-	$ContestDescription = $_POST['ContestDescription'];
-	$SubmissionDate = $_POST['SubmissionDate'];
-	$res = $create->AddNew($ContestName, $ContestDescription, $SubmissionDate);
-	if($res){
-		redirectWindow('index');
-	}
-	else{
-		showAlert("Something went wrong");
-	}
-}
 if(isset($_POST['Save'])){
 	$$ContestName = $_POST['ContestName'];
 	$ContestDescription = $_POST['ContestDescription'];
@@ -76,45 +63,6 @@ if(isset($_POST['Save'])){
 ?>
 
 </div>
-<script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
-<script>
-	$(document).ready(function(){
-		var trigger = $('#mon tr td a'),
-			container = $('#contentt');
-		trigger.on('click', function(){
-    		var PK_ID = trigger.attr('data-href');
-			//document.getElementById('#editID').attr('value');
-			var $this = $(this)
-			target = $this.data('target');
-			container.load(target);
-			return false;
-		})
-	})
-
-	$(document).ready(function(){
-		var trigger = $('#mon tr td a'),
-			container = $('#contentt');
-		trigger.on('click', function(){
-    		var PK_ID = trigger.attr('data-href');
-			//document.getElementById('#editID').attr('value');
-			var $this = $(this)
-			target = $this.data('target');
-			container.load(target);
-			return false;
-		})
-	})
-
-	$(document).ready(function(){
-		var trigger = $('#det'),
-			container = $('#contentt');
-		trigger.on('click', function(){
-			var $this = $(this)
-			target = $this.data('target');
-			container.load(target);
-			return false;
-		})
-	})
-</script>
 <?php
 getFooter($root.'/shared/adminfooter.php');
 ?>
