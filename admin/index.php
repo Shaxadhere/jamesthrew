@@ -10,7 +10,6 @@ getHeader($pageName, $root."/shared/adminheader.php")
     <h4 class="mb-3 mb-md-0">Welcome to <?php echo $pageName ?></h4>
   </div>
 </div>
-hjdkafhuhkuajhkjashdfkja
 <?php
 getFooter($root.'/shared/adminfooter.php');
 ?>
