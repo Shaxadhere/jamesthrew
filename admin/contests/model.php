@@ -38,6 +38,16 @@ class contestModel{
             return false;
         }
     }
+    function editInfo(string $ContestName, string $ContestDescription, $SubmissionDate, $id){
+        try{
+            $table = "tbl_Contest";
+            $data = array($ContestName, $ContestDescription, $SubmissionDate, 1, 0);
+            return editData($table, $data, "PK_ID", $id, $this->connect());
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
 }
 
 ?>

@@ -3,13 +3,12 @@ include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include($root.'/admin/contests/model.php');
 $pageName = "Add New";
 getHeader($pageName, $root."/shared/adminheader.php");
-$listing =new contestModel();
-$list = $listing->fetch();
 ?>
 
 <nav class="page-breadcrumb">
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="/jamesthrew/admin/">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="/jamesthrew/admin/contests/">Contest</a></li>
 		<li class="breadcrumb-item active" aria-current="page"><?php echo $pageName ?></li>
 	</ol>
 </nav>
@@ -33,7 +32,7 @@ $list = $listing->fetch();
 						<input type='date' name='SubmissionDate' class='form-control col-4'>
                     </div>
                     <button type='submit' name='Create' class='btn btn-primary mr-2'>Submit</button>
-                    <a id='cancel' href='#' class='btn btn-light' data-target=''>Cancel</a>
+                    <a href='index' class='btn btn-light'>Cancel</a>
             	</form>
             </div>
         </div>
@@ -58,16 +57,3 @@ if(isset($_POST['Create'])){
 <?php
 getFooter($root.'/shared/adminfooter.php');
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
