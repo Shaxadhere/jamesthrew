@@ -21,7 +21,7 @@ $pageName = "Contests";
 						<input type="date" name="SubmissionDate" class="form-control col-4">
                     </div>
                     <button type="submit" name="Create" class="btn btn-primary mr-2">Submit</button>
-                    <a id="det" href="#" class="btn btn-light" data-target="index">Cancel</a>
+                    <a id="cancel" href="#" class="btn btn-light" data-target="index">Cancel</a>
             	</form>
             </div>
         </div>
