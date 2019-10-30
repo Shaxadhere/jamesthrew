@@ -1,3 +1,19 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+include($root.'/admin/contests/model.php');
+$pageName = "Add New";
+getHeader($pageName, $root."/shared/adminheader.php");
+$listing =new contestModel();
+$list = $listing->fetch();
+?>
+
+<nav class="page-breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+		<li class="breadcrumb-item active" aria-current="page"><?php echo $pageName ?></li>
+	</ol>
+</nav>
+<div id="contentt">
 <div class='row'>
 	<div class='col-md-12 grid-margin stretch-card'>
         <div class='card'>
@@ -23,3 +39,35 @@
         </div>
     </div>
 </div>
+</div>
+<?php
+$create = new contestModel();
+if(isset($_POST['Create'])){
+	$ContestName = $_POST['ContestName'];
+	$ContestDescription = $_POST['ContestDescription'];
+	$SubmissionDate = $_POST['SubmissionDate'];
+	$res = $create->AddNew($ContestName, $ContestDescription, $SubmissionDate);
+	if($res){
+		redirectWindow('index');
+	}
+	else{
+		showAlert("Something went wrong");
+	}
+}
+?>
+<?php
+getFooter($root.'/shared/adminfooter.php');
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
