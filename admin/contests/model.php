@@ -29,6 +29,15 @@ class contestModel{
             return false;
         }
     }
+    function fetchInfo($id){
+        try{
+            $table = "tbl_Contest";
+            return getInfo($table, "PK_ID", $id, $this->connect());
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
 }
 
 ?>
