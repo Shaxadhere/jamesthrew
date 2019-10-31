@@ -104,5 +104,10 @@ function editData(string $table, array $data, string $PrimaryKey, $id, $conn){
     $query = "UPDATE `$table` SET $ini WHERE $PrimaryKey = $id";
     mysqli_query($conn, $query);
 }
+//Get User Data//
+function getUser(string $email, string $password, $conn){
+    $res = mysqli_query($conn, "select * from tbl_User where Email = $email and Password = $password");
+    return $res;
+}
 
 ?>
