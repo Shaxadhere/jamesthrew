@@ -19,7 +19,8 @@ $list = $listing->fetch();
 	<div class="col-md-12 grid-margin stretch-card">
     	<div class="card">
         	<div class="card-body">
-			<a href="#" id="det" class="btn btn-primary" data-target="create">Add New</a>
+			<!--<a href="#" id="det" class="btn btn-primary" data-target="create">Add New</a>-->
+			<a href="create" id="det" class="btn btn-primary">Add New</a>
 			<br>
 			<br>
             	<h6 class="card-title">All FAQS</h6>
@@ -41,7 +42,7 @@ $list = $listing->fetch();
 						<tr>
                         	<td>$arr[Question]</td>
                         	<td>$arr[Answer]</td>
-                        	<td><a href='#' id='det' class='btn btn-primary' data-href='$arr[PK_ID]' data-target='create?$arr[PK_ID]'>View Details</a></td>
+                        	<td><a href='details?d=$arr[PK_ID]' class='btn btn-primary'>View Details</a></td>
                       	</tr>
 						";
 					}

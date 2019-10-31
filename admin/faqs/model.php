@@ -30,6 +30,26 @@ class faqsModel{
             return false;
         }
     }
+    function fetchInfo($id){
+        try{
+            $table = "tbl_Faqs";
+            return getInfo($table, "PK_ID", $id, $this->connect());
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
+
+    function deleteInfo($id){
+        try{
+            $table = "tbl_Faqs";
+            deleteData($table, "PK_ID", $id, $this->connect());
+            return true;
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
 }
 
 ?>
