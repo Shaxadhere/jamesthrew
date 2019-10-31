@@ -55,6 +55,7 @@ $list = $listing->fetch();
         </div>
 	</div>
 </div>
+
 <?php
 $create = new faqsModel();
 if(isset($_POST['Create'])){
