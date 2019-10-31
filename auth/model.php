@@ -15,6 +15,10 @@ class authModel{
         $res = mysqli_query($this->connect(), $query);
         return $res;
     }
+    function logout(){
+        session_destroy();
+        header("location: /jamesthrew/");
+    }
 }
 
 ?>

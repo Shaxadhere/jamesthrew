@@ -1,3 +1,14 @@
+<?php
+//Session Management//
+$user = $_SESSION['User'];
+$email = $user[0];
+$pass = $user[1];
+$con = new connection();
+$conn = $con->connect();
+$get = mysqli_query($conn, "select * from tbl_User where Email = '$email' and Password = '$pass'");
+$userInfo = mysqli_fetch_array($get);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,8 +133,8 @@
 										<img src="/jamesthrew/assets/dashboard/assets/images/faces/face1.jpg" alt="">
 									</div>
 									<div class="info text-center">
-										<p class="name font-weight-bold mb-0">Shehzad Ahmed</p>
-										<p class="email text-muted mb-3">amiahburton@gmail.com</p>
+										<p class="name font-weight-bold mb-0"><?= $userInfo['FullName']; ?></p>
+										<p class="email text-muted mb-3"><?= $userInfo['Email']; ?></p>
 									</div>
 								</div>
 								<div class="dropdown-body">
@@ -147,7 +158,7 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="javascript:;" class="nav-link">
+											<a href="/jamesthrew/auth/logout" class="nav-link">
 												<i data-feather="log-out"></i>
 												<span>Log Out</span>
 											</a>
