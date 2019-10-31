@@ -8716,7 +8716,8 @@ pre {
   .tt-query[readonly],
   .tt-hint[readonly] {
     background-color: #18284e;
-    opacity: 1; }
+    opacity: 1;
+    color: #fff !important; }
 
 select.form-control:focus::-ms-value, select:focus::-ms-value, .email-compose-fields .select2-container--default select.select2-selection--multiple:focus::-ms-value, .select2-container--default select.select2-selection--single:focus::-ms-value, .select2-container--default .select2-selection--single select.select2-search__field:focus::-ms-value {
   color: #495057;

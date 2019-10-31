@@ -1,5 +1,7 @@
 <?php
-class faqsModel{
+
+
+class tipModel{
     function connect(){
         define("server_name", "localhost");
         define("user","root");
@@ -10,7 +12,7 @@ class faqsModel{
     }
     function fetch(){
         try{
-            $table = "tbl_Faqs";
+            $table = "tbl_tips";
             return fetchData($table, $this->connect());
         }
         catch(exception $e){
@@ -18,11 +20,11 @@ class faqsModel{
         }
     }
 
-    function AddNew (string $Question, string $Answer){
+    function AddNew (string $TipName, string $TipDescription){
         try{
-            $table = "tbl_Faqs";
-            $fields = array("Question", "Answer", "Active", "Deleted");
-            $values = array($Question, $Answer, 1, 0);
+            $table = "tbl_tips";
+            $fields = array("TipName", "TipDescription", "Active", "Deleted");
+            $values = array($TipName, $TipDescription, 1, 0);
             insertData($table, $fields, $values, $this->connect());
             return true;
         }
@@ -30,9 +32,10 @@ class faqsModel{
             return false;
         }
     }
+
     function fetchInfo($id){
         try{
-            $table = "tbl_Faqs";
+            $table = "tbl_tips";
             return getInfo($table, "PK_ID", $id, $this->connect());
         }
         catch(exception $e){
@@ -42,7 +45,7 @@ class faqsModel{
 
     function deleteInfo($id){
         try{
-            $table = "tbl_Faqs";
+            $table = "tbl_tips";
             deleteData($table, "PK_ID", $id, $this->connect());
             return true;
         }
@@ -50,6 +53,9 @@ class faqsModel{
             return false;
         }
     }
+
+  
 }
+
 
 ?>
