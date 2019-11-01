@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('auth.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 $pageName = "Dashboard";

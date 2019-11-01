@@ -36,7 +36,7 @@ $arr = mysqli_fetch_array($data);
 						<label>Submission Date<span style='color:red'>*</span></label>
 						<input type='date' name='SubmissionDate' value='<?= $arr['SubmissionDate'] ?>' class='form-control col-4'>
                     </div>
-                    <button type='submit' name='Save' class='btn btn-primary mr-2'>Save Changes</button>
+                    <input type='submit' name='btnSave' class='btn btn-primary mr-2' value="Save Changes">
                     <a href="details" class='btn btn-light'>Cancel</a>
             	</form>
             </div>
@@ -47,12 +47,12 @@ $arr = mysqli_fetch_array($data);
 <?php
 
 $conne = mysqli_connect("localhost", "root", "123", "db_jamesthrew") or die("failed to connect to database");
-if(isset($_POST['Save'])){
-    $ConName = $_POST['ContestName'];
-    $ConDescription = $_POST['ContestDescription'];
-    $ConSubmissionDate = $_POST['SubmissionDate'];
-    editData("tbl_Contest", array($ConName, $ConDescription, $ConSubmissionDate, 1, 0), "PK_ID", $ID, $conne);
-    redirectWindow('index');
+if(isset($_POST['btnSave'])){
+    $newConName = $_POST['ContestName'];
+    $newConDescription = $_POST['ContestDescription'];
+    $newConSubmissionDate = $_POST['SubmissionDate'];
+    $values = array("ContestName", $newConName, "ContestDescription", $newConDescription, "SubmissionDate", $newConSubmissionDate, "Active", 1, "Deleted", 0);
+    editData("tbl_contest", $values, "PK_ID", $ID, $conne);
 }
 getFooter($root.'/shared/adminfooter.php');
 ?>
