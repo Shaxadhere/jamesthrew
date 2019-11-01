@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 $pageName = "User Profile";
 getHeader($pageName, $root."/shared/adminheader.php")
 ?>

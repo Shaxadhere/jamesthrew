@@ -1,6 +1,6 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
-require('model.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+include_once('model.php');
 session_start();
 if(isset($_POST['Login']))
 {

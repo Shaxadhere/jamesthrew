@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
-include($root.'/admin/faqs/model.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+include_once($root.'/admin/faqs/model.php');
 $pageName = "FAQs";
 getHeader($pageName, $root."/shared/adminheader.php");
 $listing = new faqsModel();

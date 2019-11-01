@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
-include($root.'/admin/tips/model.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+include_once($root.'/admin/tips/model.php');
 $pageName = "Add New";
 getHeader($pageName, $root."/shared/adminheader.php");
 $ID = $_GET["d"];
