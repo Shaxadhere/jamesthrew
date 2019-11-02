@@ -1,4 +1,11 @@
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+if(isset($_GET['return'])){
+	$return = $_GET['return'];
+}
+$return = '';
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,13 +43,14 @@
                     <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
                     <form class="cmxform" id="" method="post" action="auth">
 						<fieldset>
+							<input type="hidden" value="<?php echo (empty($return) ? $return : ''); ?>" name="return">
 							<div class="form-group">
 								<label for="email">Email</label>
-								<input id="email" name="Email" class="form-control" name="email" type="email">
+								<input id="email" name="Email" class="form-control" name="email" type="email" required>
 							</div>
 							<div class="form-group">
 								<label for="password">Password</label>
-								<input id="password" name="Password" class="form-control" name="password" type="password">
+								<input id="password" name="Password" class="form-control" name="password" type="password" required>
 							</div>
 							<input class="btn btn-primary" name="Login" type="submit" value="Login">
 						</fieldset>
