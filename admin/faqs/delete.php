@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
-include($root.'/admin/faqs/model.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+include_once($root.'/admin/faqs/model.php');
 if(isset($_POST['Delete'])){
     $ID = $_POST['PK_ID'];
     $faq = new faqsModel();

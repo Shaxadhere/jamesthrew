@@ -1,5 +1,6 @@
 <?php
 //Session Management//
+session_start();
 $user = $_SESSION['User'];
 $email = $user[0];
 $pass = $user[1];
