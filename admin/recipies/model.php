@@ -1,5 +1,5 @@
 <?php
-class contestModel{
+class recipeModel{
     function connect(){
         define("server_name", "localhost");
         define("user","root");
@@ -10,7 +10,7 @@ class contestModel{
     }
     function fetch(){
         try{
-            $table = "tbl_Contest";
+            $table = "tbl_Recipe";
             return fetchData($table, $this->connect());
         }
         catch(exception $e){
@@ -41,9 +41,8 @@ class contestModel{
     function editInfo(string $ContestName, string $ContestDescription, $SubmissionDate, $id){
         try{
             $table = "tbl_Contest";
-            $data = array("ContestName", $ContestName, "ContestDescription", $ContestDescription, "SubmissionDate", $SubmissionDate, "Active",  1, "Deleted", 0);
-            editData($table, $data, "PK_ID", $id, $this->connect());
-            return true;
+            $data = array($ContestName, $ContestDescription, $SubmissionDate, 1, 0);
+            return editData($table, $data, "PK_ID", $id, $this->connect());
         }
         catch(exception $e){
             return false;
@@ -53,6 +52,16 @@ class contestModel{
         try{
             $table = "tbl_Contest";
             deleteData($table, "PK_ID", $id, $this->connect());
+            return true;
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
+    function getSteps($recipeID){
+        try{
+            $query = "select a.PK_ID, a.RecipeName, b.StepDescription from tbl_recipe as a JOIN tbl_steps as b on $recipeID = b.FK_RecipeSteps";
+            mysqli_query($this->connect(), $query);
             return true;
         }
         catch(exception $e){

@@ -1,13 +1,11 @@
 <?php
-
-
 class tipModel{
     function connect(){
-        define("server_name", "localhost");
-        define("user","root");
-        define("pass","123");
-        define("database","db_jamesthrew");
-        $connection = mysqli_connect(server_name, user, pass, database) or die("failed to connect to database");
+        $server = "localhost";
+        $username = "root";
+        $password= "123";
+        $database = "db_jamesthrew";
+        $connection = mysqli_connect($server, $username, $password, $database) or die("failed to connect to database");
         return ($connection);
     }
     function fetch(){
@@ -37,6 +35,18 @@ class tipModel{
         try{
             $table = "tbl_tips";
             return getInfo($table, "PK_ID", $id, $this->connect());
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
+
+    function editInfo(string $TipName, string $TipDescription, $id){
+        try{
+            $table = "tbl_tips";
+            $data = array("TipName", $TipName, "tipDescription", $TipDescription, "Active",  1, "Deleted", 0);
+            editData($table, $data, "PK_ID", $id, $this->connect());
+            return true;
         }
         catch(exception $e){
             return false;

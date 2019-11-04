@@ -1,11 +1,11 @@
 <?php
 class faqsModel{
     function connect(){
-        define("server_name", "localhost");
-        define("user","root");
-        define("pass","123");
-        define("database","db_jamesthrew");
-        $connection = mysqli_connect(server_name, user, pass, database) or die("failed to connect to database");
+        $server = "localhost";
+        $username = "root";
+        $password= "123";
+        $database = "db_jamesthrew";
+        $connection = mysqli_connect($server, $username, $password, $database) or die("failed to connect to database");
         return ($connection);
     }
     function fetch(){
@@ -34,6 +34,18 @@ class faqsModel{
         try{
             $table = "tbl_Faqs";
             return getInfo($table, "PK_ID", $id, $this->connect());
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
+
+    function editInfo(string $Question, string $Answer, $id){
+        try{
+            $table = "tbl_Faqs";
+            $data = array("Question", $Question, "Answer", $Answer, "Active",  1, "Deleted", 0);
+            editData($table, $data, "PK_ID", $id, $this->connect());
+            return true;
         }
         catch(exception $e){
             return false;
