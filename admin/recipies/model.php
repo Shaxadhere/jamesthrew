@@ -58,6 +58,16 @@ class recipeModel{
             return false;
         }
     }
+    function getSteps($recipeID){
+        try{
+            $query = "select a.PK_ID, a.RecipeName, b.StepDescription from tbl_recipe as a JOIN tbl_steps as b on $recipeID = b.FK_RecipeSteps";
+            mysqli_query($this->connect(), $query);
+            return true;
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
 }
 
 ?>
