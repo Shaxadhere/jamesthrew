@@ -35,9 +35,11 @@ $arr = mysqli_fetch_array($data);
 						<label>Submission Date<span style='color:red'>*</span></label>
 						<input type='date' name='SubmissionDate' value='<?= $arr['SubmissionDate'] ?>' disabled class='form-control col-4'>
                     </div>
+                    
                     <a href="edit?d=<?= $arr['PK_ID']; ?>" class='btn btn-primary mr-2'>Edit</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
                     <a href='index' class='btn btn-light'>Cancel</a>
+                    
             	</form>
             </div>
         </div>

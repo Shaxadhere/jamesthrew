@@ -31,15 +31,19 @@ $arr = mysqli_fetch_array($data);
                     <div class='form-group'>
 						<label for='exampleFormControlTextarea1'>Answer<span style='color:red'>*</span></label>
 						<textarea class='form-control' maxlength='1000' disabled name='Answer' id='defaultconfig' id='exampleFormControlTextarea1' rows='10' placeholder='Enter Contest Description..'><?= $arr['Answer']; ?></textarea>
-                    <a href="edit?d=<?= $arr['PK_ID']; ?>" class='btn btn-primary mr-2'>Edit</a>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
-                    <a href='index' class='btn btn-light'>Cancel</a>
-            	</form>
+            <br>
+            <div><a href="edit?d=<?= $arr['PK_ID']; ?>" class='btn btn-primary mr-2'>Edit</a>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
+            <a href='index' class='btn btn-light'>Cancel</a>   </div>
+              </form>
+              
             </div>
         </div>
     </div>
 </div>
 </div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

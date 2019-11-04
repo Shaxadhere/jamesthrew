@@ -41,8 +41,9 @@ class contestModel{
     function editInfo(string $ContestName, string $ContestDescription, $SubmissionDate, $id){
         try{
             $table = "tbl_Contest";
-            $data = array($ContestName, $ContestDescription, $SubmissionDate, 1, 0);
-            return editData($table, $data, "PK_ID", $id, $this->connect());
+            $data = array("ContestName", $ContestName, "ContestDescription", $ContestDescription, "SubmissionDate", $SubmissionDate, "Active",  1, "Deleted", 0);
+            editData($table, $data, "PK_ID", $id, $this->connect());
+            return true;
         }
         catch(exception $e){
             return false;
