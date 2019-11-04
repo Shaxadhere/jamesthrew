@@ -14,6 +14,3 @@ getHeader($pageName, $root."/shared/adminheader.php")
 <?php
 getFooter($root.'/shared/adminfooter.php');
 ?>
-
-
-sda
