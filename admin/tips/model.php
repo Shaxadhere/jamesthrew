@@ -40,6 +40,18 @@ class tipModel{
         }
     }
 
+    function editInfo(string $TipName, string $TipDescription, $id){
+        try{
+            $table = "tbl_tips";
+            $data = array("TipName", $TipName, "tipDescription", $TipDescription, "Active",  1, "Deleted", 0);
+            editData($table, $data, "PK_ID", $id, $this->connect());
+            return true;
+        }
+        catch(exception $e){
+            return false;
+        }
+    }
+
     function deleteInfo($id){
         try{
             $table = "tbl_tips";
