@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include_once($root.'/admin/faqs/model.php');
 $pageName = "FAQs";
+session_start();
 getHeader($pageName, $root."/shared/adminheader.php");
 $listing = new faqsModel();
 $list = $listing->fetch();

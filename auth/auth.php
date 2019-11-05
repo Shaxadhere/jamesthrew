@@ -8,17 +8,19 @@ if(isset($_POST['Login']))
 	$pass = $_POST['Password'];
 	$return = $_POST['return'];
 	$auth = new authModel();
-	$cred = $auth->login($email, $pass);
+	$cred = mysqli_fetch_array($auth->login($email, $pass));
 	if(isset($cred))
 	{
-		if($user['FK_UserType'] = 1){
-			$_SESSION['User'] = array($email, $pass);
-			if(!empty($return)){
-				header("location: redirect");	
-			}
+		showAlert("UserFound");
+		if($cred['FK_UserType'] == 1){
+			$_SESSION['User'] = $cred;
+			//if(!empty($return)){
+			//	header("location: redirect");	
+			//}
+			showAlert("Admin");
 			header("location: redirect");
 		}
-		else if($user['FK_UserType'] = 2){
+		else if($cred['FK_UserType'] == 2){
 			showAlert("User");
 		}
 	}

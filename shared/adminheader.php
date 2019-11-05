@@ -1,15 +1,6 @@
 <?php
-//Session Management//
-session_start();
-$user = $_SESSION['User'];
-$email = $user[0];
-$pass = $user[1];
-$con = new connection();
-$conn = $con->connect();
-$get = mysqli_query($conn, "select * from tbl_User where Email = '$email' and Password = '$pass'");
-$userInfo = mysqli_fetch_array($get);
+$userInfo = $_SESSION['User'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include_once($root.'/admin/contests/model.php');
 $pageName = "Contests";
+session_start();
 getHeader($pageName, $root."/shared/adminheader.php");
 $listing =new contestModel();
 $list = $listing->fetch();

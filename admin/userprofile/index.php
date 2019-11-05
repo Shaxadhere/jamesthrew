@@ -1,6 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 $pageName = "User Profile";
+session_start();
 getHeader($pageName, $root."/shared/adminheader.php")
 ?>
 

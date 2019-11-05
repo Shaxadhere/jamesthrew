@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include_once($root.'/admin/tips/model.php');
 $pageName = "Add New";
+session_start();
 getHeader($pageName, $root."/shared/adminheader.php");
 $ID = $_GET["d"];
 $tipModel = new tipModel();

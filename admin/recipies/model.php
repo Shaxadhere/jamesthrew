@@ -1,11 +1,11 @@
 <?php
 class recipeModel{
     function connect(){
-        define("server_name", "localhost");
-        define("user","root");
-        define("pass","123");
-        define("database","db_jamesthrew");
-        $connection = mysqli_connect(server_name, user, pass, database) or die("failed to connect to database");
+        $server = "localhost";
+        $username = "root";
+        $password= "123";
+        $database = "db_jamesthrew";
+        $connection = mysqli_connect($server, $username, $password, $database) or die("failed to connect to database");
         return ($connection);
     }
     function fetch(){
@@ -61,8 +61,7 @@ class recipeModel{
     function getSteps($recipeID){
         try{
             $query = "select a.PK_ID, a.RecipeName, b.StepDescription from tbl_recipe as a JOIN tbl_steps as b on $recipeID = b.FK_RecipeSteps";
-            mysqli_query($this->connect(), $query);
-            return true;
+            return mysqli_query($this->connect(), $query);
         }
         catch(exception $e){
             return false;

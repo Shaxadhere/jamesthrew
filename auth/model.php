@@ -11,7 +11,7 @@ class authModel{
     }
     function login(string $email, string $password)
     {
-        $query = "select * from tbl_User where Email = $email and Password = $password";
+        $query = "select * from tbl_User where Email = '$email' and Password = '$password'";
         $res = mysqli_query($this->connect(), $query);
         return $res;
     }

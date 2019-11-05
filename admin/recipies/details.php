@@ -2,14 +2,14 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include_once($root.'/admin/recipies/model.php');
 $pageName = "Details";
+session_start();
 getHeader($pageName, $root."/shared/adminheader.php");
 $ID = $_GET["d"];
 $contestModel =new recipeModel();
 $data = $contestModel->fetchInfo($ID);
 $arr = mysqli_fetch_array($data);
 $result = $contestModel->getSteps($ID);
-$result->num_rows;
-echo $result;
+echo mysqli_num_rows($result);
 ?>
 
 <nav class="page-breadcrumb">

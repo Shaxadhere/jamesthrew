@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 include_once($root.'/admin/recipies/model.php');
 $pageName = "Contests";
+session_start();
 getHeader($pageName, $root."/shared/adminheader.php");
 $listing =new recipeModel();
 $list = $listing->fetch();
