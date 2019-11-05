@@ -11,6 +11,7 @@ $userInfo = $_SESSION['User'];
 	<title>Jamesthrew.com</title>
 	<!-- core:css -->
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/core/core.css">
+	<link rel="stylesheet" href="/jamesthrew/assets/jquery/jquery-ui.css">
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="/jamesthrew/assets/dashboard/assets/fonts/feather-font/css/iconfont.css">

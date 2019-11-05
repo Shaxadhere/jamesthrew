@@ -7,7 +7,9 @@
 		
 		</div>
 	</div>
-
+	
+	<script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
+	<script src="/jamesthrew/assets/jquery/jquery-ui.min.js"></script>
 	<script src="/jamesthrew/assets/dashboard/assets/vendors/core/core.js"></script>
   	<script src="/jamesthrew/assets/dashboard/assets/vendors/chartjs/Chart.min.js"></script>
   	<script src="/jamesthrew/assets/dashboard/assets/vendors/jquery.flot/jquery.flot.js"></script>
