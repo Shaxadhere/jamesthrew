@@ -20,7 +20,6 @@ $list = $listing->fetch();
 	<div class="col-md-12 grid-margin stretch-card">
     	<div class="card">
         	<div class="card-body">
-			<!--<a href="#" id="det" class="btn btn-primary" data-target="create">Add New</a>-->
 			<a href="create" id="det" class="btn btn-primary">Add New</a>
 			<br>
 			<br>
@@ -41,8 +40,8 @@ $list = $listing->fetch();
 					{
 						echo "
 						<tr>
-                        	<td>$arr[Question]</td>
-                        	<td>$arr[Answer]</td>
+                        	<td>".substr("$arr[Question]",0,80)."...</td>
+                        	<td>".substr("$arr[Answer]",0,80)."...</td>
                         	<td><a href='details?d=$arr[PK_ID]' class='btn btn-primary'>View Details</a></td>
                       	</tr>
 						";

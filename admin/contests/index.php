@@ -40,7 +40,7 @@ $list = $listing->fetch();
 						echo "
 						<tr>
                         	<td>$arr[ContestName]</td>
-                        	<td>$arr[ContestDescription]</td>
+                        	<td>".substr("$arr[ContestDescription]",0,80)."...</td>
                         	<td>$arr[SubmissionDate]</td>
                         	<td><a href='details?d=$arr[PK_ID]' class='btn btn-primary'>View Details</a></td>
                       	</tr>
@@ -55,14 +55,6 @@ $list = $listing->fetch();
         </div>
 	</div>
 </div>
-<?php
-if(isset($_POST['Save'])){
-	$$ContestName = $_POST['ContestName'];
-	$ContestDescription = $_POST['ContestDescription'];
-	$SubmissionDate = $_POST['SubmissionDate'];
-}
-?>
-
 </div>
 <?php
 getFooter($root.'/shared/adminfooter.php');

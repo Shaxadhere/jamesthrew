@@ -45,7 +45,7 @@ $list = $listing->fetch();
 						echo "
 						<tr>
                         	<td>$arr[TipName]</td>
-                        	<td>$arr[TipDescription]</td>
+                        	<td>".substr("$arr[TipDescription]",0,80)."...</td>
                         	<td><a href='details?d=$arr[PK_ID]' class='btn btn-primary'>View Details</a></td>
                       	</tr>
 						";
