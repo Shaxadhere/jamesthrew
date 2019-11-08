@@ -1,10 +1,14 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
+$return = '';
 if(isset($_GET['return'])){
 	$return = $_GET['return'];
 }
-$return = '';
-
+$status = $_REQUEST['status'];
+$modelError = "";
+if($status == "false"){
+	$modelError = "Oops! the credentials you entered are invalid, tried refreshing the page?";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +47,7 @@ $return = '';
                     <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
                     <form class="cmxform" id="" method="post" action="auth">
 						<fieldset>
-							<input type="hidden" value="<?php echo (empty($return) ? $return : ''); ?>" name="return">
+							<input type="hidden" value="<?php echo (!empty($return) ? $return : ''); ?>" name="return">
 							<div class="form-group">
 								<label for="email">Email</label>
 								<input id="email" name="Email" class="form-control" name="email" type="email" required>
@@ -52,6 +56,7 @@ $return = '';
 								<label for="password">Password</label>
 								<input id="password" name="Password" class="form-control" name="password" type="password" required>
 							</div>
+							<label class="mt-2 text-danger"><?php echo (!empty($modelError) ? $modelError : ''); ?></label>
 							<input class="btn btn-primary" name="Login" type="submit" value="Login">
 						</fieldset>
 					</form>

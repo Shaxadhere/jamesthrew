@@ -39,11 +39,30 @@
 
 </html>    
 
+<?php
 
+session_start();
+if(isset($_SESSION)){
+$user = $_SESSION['User'];
+if(isset($user))
+	if($user['FK_UserType']==1){
+		echo "<script>setTimeout(function() { Redirect(); }, 1000);</script>";
+	}
+	else if($user['FK_UserType']==2){
+		echo "<script>setTimeout(function() { RedirectUser(); }, 1000);</script>";
+	}
+	else{
+		echo "<script>window.location.href='/jamesthrew/auth/login'</script>";
+	}
+}
+?>
 <script>
-setTimeout(function() { Redirect(); }, 1000);
+
 function Redirect(){
-    window.location.href='/jamesthrew/admin/';
+	window.location.href='/jamesthrew/admin/';
+}
+function RedirectUser(){
+	window.location.href='/jamesthrew/user0/';
 }
 
 </script>

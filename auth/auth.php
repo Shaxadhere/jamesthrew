@@ -11,23 +11,28 @@ if(isset($_POST['Login']))
 	$cred = mysqli_fetch_array($auth->login($email, $pass));
 	if(isset($cred))
 	{
-		showAlert("UserFound");
+		$_SESSION['User'] = $cred;
 		if($cred['FK_UserType'] == 1){
-			$_SESSION['User'] = $cred;
-			//if(!empty($return)){
-			//	header("location: redirect");	
-			//}
-			showAlert("Admin");
-			header("location: redirect");
+			if(!empty($return)){
+				header("location: $return");	
+			}
+			else{
+				header("location: redirect");
+			}
 		}
 		else if($cred['FK_UserType'] == 2){
-			showAlert("User");
+			if(!empty($return)){
+				header("location: $return");	
+			}
+			else{
+				header("location: redirect");
+			}
 		}
 	}
 	else
 	{
 		session_destroy();
-		showAlert('Invalid Credentials');
+		header("location: login?status=false");
 	}
 }
 

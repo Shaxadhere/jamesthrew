@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/jamesthrew/appdata/WebConfig.php');
 $pageName = "Dashboard";
 session_start();
-getHeader($pageName, $root."/shared/adminheader.php");
+getHeader($pageName, $root."/shared/userheader.php");
 include_once('auth.php');
 ?>
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
@@ -11,7 +11,7 @@ include_once('auth.php');
   </div>
 </div>
 <?php
-getFooter($root.'/shared/adminfooter.php');
+getFooter($root.'/shared/userfooter.php');
 ?>
 
 

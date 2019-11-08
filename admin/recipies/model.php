@@ -19,7 +19,7 @@ class recipeModel{
     }
     function AddNew(string $ContestName, string $ContestDescription, $SubmissionDate){
         try{
-            $table = "tbl_Contest";
+            $table = "tbl_Recipe";
             $fields = array("ContestName", "ContestDescription", "SubmissionDate", "Active", "Deleted");
             $values = array($ContestName, $ContestDescription, $SubmissionDate, 1, 0);
             insertData($table, $fields, $values, $this->connect());
@@ -31,7 +31,7 @@ class recipeModel{
     }
     function fetchInfo($id){
         try{
-            $table = "tbl_Contest";
+            $table = "tbl_Recipe";
             return getInfo($table, "PK_ID", $id, $this->connect());
         }
         catch(exception $e){
@@ -40,7 +40,7 @@ class recipeModel{
     }
     function editInfo(string $ContestName, string $ContestDescription, $SubmissionDate, $id){
         try{
-            $table = "tbl_Contest";
+            $table = "tbl_Recipe";
             $data = array($ContestName, $ContestDescription, $SubmissionDate, 1, 0);
             return editData($table, $data, "PK_ID", $id, $this->connect());
         }
@@ -50,7 +50,7 @@ class recipeModel{
     }
     function deleteInfo($id){
         try{
-            $table = "tbl_Contest";
+            $table = "tbl_Recipe";
             deleteData($table, "PK_ID", $id, $this->connect());
             return true;
         }

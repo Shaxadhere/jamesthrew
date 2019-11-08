@@ -5,17 +5,16 @@ $pageName = "Details";
 session_start();
 getHeader($pageName, $root."/shared/adminheader.php");
 $ID = $_GET["d"];
-$contestModel =new recipeModel();
-$data = $contestModel->fetchInfo($ID);
+$recipeModel =new recipeModel();
+$data = $recipeModel->fetchInfo($ID);
 $arr = mysqli_fetch_array($data);
-$result = $contestModel->getSteps($ID);
-echo mysqli_num_rows($result);
+$result = $recipeModel->getSteps($ID);
 ?>
 
 <nav class="page-breadcrumb">
 	<ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/jamesthrew/admin/">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="/jamesthrew/admin/contests/">Contest</a></li>
+        <li class="breadcrumb-item"><a href="/jamesthrew/admin/contests/">Recipes</a></li>
 		<li class="breadcrumb-item active" aria-current="page"><?php echo $pageName ?></li>
 	</ol>
 </nav>
@@ -25,13 +24,15 @@ echo mysqli_num_rows($result);
         <div class='card'>
             <div class='card-body'>
                 <h6 class='card-title'>Recipe Details</h6>
-				<form class='forms-sample' action='' method='post'>
+				        <form class='forms-sample' action='' method='post'>
                     <div class='form-group'>
                         <label class='col-form-label'>Recipe Name<span style='color:red'>*</span></label>
-                        <input class='form-control' value='<?= $arr['RecipeName']; ?>' maxlength='50' name='ContestName' disabled id='defaultconfig' type='text' placeholder='Enter Contest Name..'>
+                        <input class='form-control' value='<?= $arr['RecipeName']; ?>' maxlength='50' name='RecipeName' disabled id='defaultconfig' type='text' placeholder='Enter Recipe Name..'>
                     </div>
                     <div class='form-group'>
-						            <label for='exampleFormControlTextarea1'><span style='color:red'>*</span></label>
+                    <a href="steps?d=<?= $arr['PK_ID']; ?>" class="btn btn-info">
+	                    View Recipe Steps <span class="badge badge-light"><?= mysqli_num_rows($result); ?></span>
+                    </a>
                     </div>
                     <a href="edit?d=<?= $arr['PK_ID']; ?>" class='btn btn-primary mr-2'>Edit</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
