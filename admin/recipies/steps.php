@@ -12,7 +12,10 @@ $result = $recipeModel->getSteps($ID);
 //$st = mysqli_fetch_array($result);
 //echo showAlert($st[1]);
 ?>
-
+<script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
+<script>
+var counts = 2;
+</script>
 <nav class="page-breadcrumb">
 	<ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/jamesthrew/admin/">Dashboard</a></li>
@@ -37,7 +40,7 @@ $result = $recipeModel->getSteps($ID);
                             <div id='steps'>
                             <div class='form-group' id='desc$count' data-href='$count'>
                             <label for='exampleInputText1'>Step $count</label>
-                            <button type='button' onClick='dltStepDiv($count)' class='badge badge-danger' style='float:right'>Delete Step</button>
+                            <button id='dltStepbtn' type='button' onClick='$(desc$count).remove(); counts--;' class='badge badge-danger' style='float:right'>Delete Step</button>
                             <textarea id='maxlength-textarea' class='form-control' maxlength='1000' name='steps[]' rows='4' placeholder='Enter Step Description.' required>$val[2]</textarea>
                             </div>
                             </div>
@@ -46,7 +49,7 @@ $result = $recipeModel->getSteps($ID);
                         ?>
                     </div>
                     <button type="button" id="addSteps" class='btn btn-primary mr-2'>Add Step</button>
-                    <button type="button" href="edit?d=<?= $arr['PK_ID']; ?>" class='btn btn-primary mr-2'>Save Changes</button>
+                    <button type="submit" class='btn btn-primary mr-2'>Save Changes</button>
                     <a href='index' class='btn btn-light'>Close</a>
             	</form>
             </div>
@@ -54,19 +57,20 @@ $result = $recipeModel->getSteps($ID);
     </div>
 </div>
 </div> 
-<script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
 <script>
-var counts = 2;
+
 $(document).ready(function(){
   $("#addSteps").click(function(){
-    $("#steps").append("<div class='form-group' id='desc"+counts+"'><label for='exampleInputText1'>Step "+counts+"</label><button type='button' id='dltStep' class='badge badge-danger' style='float:right'>Delete Step</button><textarea  id='maxlength-textarea' class='form-control' maxlength='1000' name='steps[]' rows='4' placeholder='Enter Step Description.' required></textarea></div>");
+    $("#steps").append("<div class='form-group' id='desc"+counts+"'><label for='exampleInputText1'>Step "+counts+"</label><button type='button' onClick='$(desc"+counts+").remove(); counts--;' class='badge badge-danger' style='float:right'>Delete Step</button><textarea  id='maxlength-textarea' class='form-control' maxlength='1000' name='steps[]' rows='4' placeholder='Enter Step Description.' required></textarea></div>");
     counts++;
     });
 });
-function dltStepDiv(id){
-    var div = $('desc'+id);
-    $(div).remove();
-}
+
+$(document).ready(function(){
+    $('#dltStepbtn').on('click', function(){
+        counts--;
+    })
+})
 </script>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -92,5 +96,6 @@ function dltStepDiv(id){
   </div>
 </div>
 <?php
+
 getFooter($root.'/shared/adminfooter.php');
 ?>
