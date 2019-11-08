@@ -12,22 +12,65 @@ getHeader($pageName, $root."/shared/adminheader.php");
 	</ol>
 </nav>
 <div id="contentt">
-<label>Skills:</label>
-<input type="text" id="skill_input"/>
+	<div class="col">
+	    <label>Basic</label>
+		<div id="lols">
+			<input class="typeahead" type="text" placeholder="States of USA">
+		</div>
+    </div>
+    <p>
+    
+</p>
 <script src="/jamesthrew/assets/jquery/jquery-3.1.1.min.js"></script>
-<script src="/jamesthrew/assets/jquery/jquery-ui.min.js"></script>
-hhh
+<script src="/jamesthrew/assets/ajax/jquery.unobtrusive-ajax.min.js"></script>
+<script src="/jamesthrew/assets/dashboard/assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+
 <script>
-$(function() {
-    $("#skill_input").autocomplete({
-        source: "search.php",
-        select: function( event, ui ) {
-            event.preventDefault();
-            $("#skill_input").val(ui.item.id);
-        }
-    });
+    
+    $(document).ready(function(){
+        $('#lols .typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1},{
+            source: function(query, result){
+                $.ajax({
+                    url: "filter?query="+query,
+                    method: "GET",
+                   // data: JSON.stringify({query:query}),
+                    success: function(data){
+                        result($.map(data, function(item){
+                            return item;
+                        }))
+                    }
+                })
+            }
+        })
+    })
+
+
+$(document).ready(function(){
+ 
+ $('#useremail').typeahead({
+  source: function(query, result)
+  {
+   $.ajax({
+    url:"filter",
+    method:"POST",
+    data:{query:query},
+    dataType:"json",
+    success:function(data)
+    {
+     result($.map(data, function(item){
+      return item;
+     }));
+    }
+   })
+  }
+ });
+ 
 });
 </script>
+
 </div>
 <?php
 getFooter($root.'/shared/adminfooter.php');
